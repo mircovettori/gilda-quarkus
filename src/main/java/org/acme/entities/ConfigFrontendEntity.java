@@ -1,6 +1,5 @@
 package org.acme.entities;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "CONFIG_FRONTEND")
-public class ConfigFrontendEntity extends PanacheEntity {
+public class ConfigFrontendEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
