@@ -7,14 +7,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.util.UUID;
+
 @Entity
-@Table(name = "CONFIG_FRONTEND")
+@Table(name = "CONFIG_FRONTEND_QUARKUS")
 public class ConfigFrontendEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(nullable = false, name = "OID")
-    private String oid;
+    private UUID oid;
     @Column(nullable = false, name = "NAME")
     private String name;
     @Column(nullable = false, name = "SCRIPT_NAME")
@@ -36,11 +38,11 @@ public class ConfigFrontendEntity {
     @Column(name = "CUSTOM_HOST")
     private String customHost;
 
-    public String getOid() {
+    public UUID getOid() {
         return oid;
     }
 
-    public void setOid(String oid) {
+    public void setOid(UUID oid) {
         this.oid = oid;
     }
 
