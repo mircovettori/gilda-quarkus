@@ -16,4 +16,12 @@ public class ConfigFrontendService {
         return configFrontendRepository.findAll().list();
     }
 
+    public ConfigFrontendEntity createConfig(ConfigFrontendEntity config) {
+        configFrontendRepository.persist(config);
+        return config;
+    }
+
+    public void deleteConfigs(List<String> oids) {
+        configFrontendRepository.delete("oid in ?1", oids);
+    }
 }
